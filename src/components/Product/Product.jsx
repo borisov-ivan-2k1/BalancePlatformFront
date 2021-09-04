@@ -73,7 +73,7 @@ const Component = ({ data, orderProduct }) => {
     <ProductInfo>
       <ProductName>{data.title}</ProductName>
       <ProducDescription>{data.description}</ProducDescription>
-      <ProductPrice>{data.price} кредитов</ProductPrice>
+      <ProductPrice>{data.price} коинов</ProductPrice>
       <StyledButton onClick={() => orderProduct(data)}>Заказать</StyledButton>
     </ProductInfo>
     
