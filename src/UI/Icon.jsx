@@ -12,6 +12,7 @@ import email from 'assets/svg/email.svg';
 import phone from 'assets/svg/phone.svg';
 import currency from 'assets/svg/currency.svg';
 import spentCurrency from 'assets/svg/spentCurrency.svg';
+import dash from 'assets/svg/dash.svg';
 
 
 
@@ -30,6 +31,7 @@ const icons = {
   phone,
   currency,
   spentCurrency,
+  dash
 }
 
 const StyledIcon = styled.img`

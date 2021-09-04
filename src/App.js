@@ -6,7 +6,8 @@ import {
   GroupsPage,
   UsersPage,
   UsersRatingPage,
-  UserPage
+  UserPage,
+  DashPage
 } from 'pages';
 import { Layout } from 'antd';
 import { Header, Menu, Content } from 'components';
@@ -25,16 +26,17 @@ const App = ({ isAuth, initUser }) => {
 
   return (
     <div className="App">
-      { isAuth ? null : <Redirect to='/' /> }
+      { isAuth ? <Redirect to='/dash' /> : <Redirect to='/' /> }
 
       {
-        debugAuth ?
+        isAuth ?
           <Layout>
             <Menu />
             <Layout>
               <Header />
               <Content>
                 <Switch>
+                  <Route path='/dash' exact component={DashPage} />
                   <Route path='/shop' exact component={ShopPage} />
                   <Route path='/groups' exact component={GroupsPage} />
                   <Route path='/users' exact component={UsersPage} />

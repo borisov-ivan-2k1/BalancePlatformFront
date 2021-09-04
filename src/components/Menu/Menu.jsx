@@ -43,6 +43,10 @@ const Component = ({}) => {
       <Avatar size={50} name={item.name} type={item.type} id={item.id} />
     </Item>
 
+    <Item to={`/dash`} activeClassName='active'>
+      <Icon type='dash' />
+    </Item>
+
     <Item to={`/users`} activeClassName='active'>
       <Icon type='users' />
     </Item>
