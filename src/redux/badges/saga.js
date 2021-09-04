@@ -1,13 +1,12 @@
 import { takeLeading, call, put } from 'redux-saga/effects';
 import { actionTypes, setBadges, setBadgesLoading } from './actions';
 import { getBadgesRequest } from 'requests/badges';
-// import { toast } from 'react-toastify';
 
 
 function* getBadges(action) {
   yield put(setBadgesLoading(true));
   try {
-    const response = yield call(getBadgesRequest);
+    const response = yield call(getBadgesRequest, action.payload);
     if (response) {
       yield put(setBadges(response.data));
     } else {
