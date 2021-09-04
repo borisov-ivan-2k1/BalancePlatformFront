@@ -6,3 +6,5 @@ export { Widget } from './Wiidget';
 export { GroupRewards } from './GroupRewards';
 export { Avatar } from './Avatar';
 export { InfoItem } from './InfoItem';
+export { CustomLineProgress as LineProgress } from './LineProgress';
+export { Badge } from './Badge';

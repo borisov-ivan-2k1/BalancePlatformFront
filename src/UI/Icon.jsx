@@ -10,6 +10,8 @@ import draw from 'assets/svg/draw.svg';
 import defeat from 'assets/svg/defeat.svg';
 import email from 'assets/svg/email.svg';
 import phone from 'assets/svg/phone.svg';
+import currency from 'assets/svg/currency.svg';
+import spentCurrency from 'assets/svg/spentCurrency.svg';
 
 
 
@@ -26,6 +28,8 @@ const icons = {
   defeat,
   email,
   phone,
+  currency,
+  spentCurrency,
 }
 
 const StyledIcon = styled.img`
