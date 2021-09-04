@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { usersMock, mapStateToProps, mapActionsToProps } from './Users.index';
+import { mapStateToProps, mapActionsToProps } from './Users.index';
 import { UserItem } from 'components';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
@@ -19,7 +19,7 @@ const Component = ({ users, loading, getUsers }) => {
     getUsers();
   }, [])
 
-  const data = (!users.length && !loading) ? usersMock : users;
+  const data = (!users.length && !loading) ? [] : users;
 
   return <Wrapper>
     {data.map(user => <UserItem key={user.id} data={user} />)}

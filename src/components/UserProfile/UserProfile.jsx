@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import styled from "styled-components";
-import { mapStateToProps, mapActionsToProps, userMock } from './UserProfile.index';
+import { mapStateToProps, mapActionsToProps } from './UserProfile.index';
 import { Widget, Icon } from 'UI';
 import { colors } from "utils/constants";
 import { connect } from "react-redux";
@@ -75,7 +75,9 @@ const Component = ({ user, loading, getUser, clearUser }) => {
     }
   }, [])
 
-  const data = (!user) ? userMock : user;
+  const data = (!user) ? undefined : user;
+
+  if (!user) return <></>;
 
   return <Wrapper>
     <Photo imgUrl={data.imgUrl} />

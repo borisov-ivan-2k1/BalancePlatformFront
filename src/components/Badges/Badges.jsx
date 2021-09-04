@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import styled from "styled-components";
-import { mapStateToProps, mapActionsToProps, badgesMock } from './Badges.index';
+import { mapStateToProps, mapActionsToProps } from './Badges.index';
 import { Widget, Badge } from 'UI';
 import { connect } from "react-redux";
 
@@ -34,7 +34,7 @@ const Component = ({ badges, loading, getBadges, clearBadges, userId }) => {
     }
   }, [])
 
-  const data = (!badges.length && !loading) ? badgesMock : badges;
+  const data = (!badges.length && !loading) ? [] : badges;
 
   return <Wrapper>
     <Title>Бейджи и награды</Title>

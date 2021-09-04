@@ -8,3 +8,4 @@ export { Avatar } from './Avatar';
 export { InfoItem } from './InfoItem';
 export { CustomLineProgress as LineProgress } from './LineProgress';
 export { Badge } from './Badge';
+export { Content } from './Content';

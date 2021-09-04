@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { itemsMock, mapStateToProps, mapActionsToProps } from './UsersRating.index';
+import { mapStateToProps, mapActionsToProps } from './UsersRating.index';
 import { UserRatingItem } from 'components';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
@@ -19,7 +19,7 @@ const Component = ({ items, loading, getUsersRating }) => {
     getUsersRating();
   }, [])
 
-  const data = (!items.length && !loading) ? itemsMock : items;
+  const data = (!items.length && !loading) ? [] : items;
 
   return <Wrapper>
     {data.map(item => <UserRatingItem key={item.id} data={item} />)}

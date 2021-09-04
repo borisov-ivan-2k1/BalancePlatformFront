@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { groupsMock, mapStateToProps, mapActionsToProps } from './Groups.index';
+import { mapStateToProps, mapActionsToProps } from './Groups.index';
 import { GroupItem, GroupModal } from 'components';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
@@ -26,7 +26,7 @@ const Component = ({ groups, loading, getGroups, changeAddGroup }) => {
     getGroups();
   }, [])
 
-  const data = (!groups.length && !loading) ? groupsMock : groups;
+  const data = (!groups.length && !loading) ? [] : groups;
 
   return <Wrapper>
     {data.map(group => <GroupItem key={group.id} data={group} />)}

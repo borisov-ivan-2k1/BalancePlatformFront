@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { productsMock, mapStateToProps, mapActionsToProps } from './Shop.index';
+import { mapStateToProps, mapActionsToProps } from './Shop.index';
 import { Product } from 'components';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
@@ -18,7 +18,7 @@ const Component = ({ products, loading, getShopProducts }) => {
     getShopProducts();
   }, [])
 
-  const data = (!products.length && !loading) ? productsMock : products;
+  const data = (!products.length && !loading) ? [] : products;
 
   return <Wrapper>
     {data.map(product => <Product key={product.id} data={product} />)}

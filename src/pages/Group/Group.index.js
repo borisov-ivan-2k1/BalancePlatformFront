@@ -2,7 +2,7 @@ import { bindActionCreators } from 'redux';
 
 
 export const mapStateToProps = state => ({
-  data: 'goals'
+  data: 'group'
 })
 
 export const mapActionsToProps = dispatch => bindActionCreators({

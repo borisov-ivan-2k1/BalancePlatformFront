@@ -7,7 +7,8 @@ import {
   UsersPage,
   UsersRatingPage,
   UserPage,
-  DashPage
+  DashPage,
+  GroupPage
 } from 'pages';
 import { Layout } from 'antd';
 import { Header, Menu, Content } from 'components';
@@ -42,6 +43,7 @@ const App = ({ isAuth, initUser }) => {
                   <Route path='/users' exact component={UsersPage} />
                   <Route path='/rating' exact component={UsersRatingPage} />
                   <Route path='/user/:id' component={UserPage} />
+                  <Route path='/group/:id' component={GroupPage} />
                 </Switch>
               </Content>
             </Layout>
