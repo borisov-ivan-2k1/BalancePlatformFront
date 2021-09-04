@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
+import { Route, Redirect, Switch } from 'react-router-dom';
+import {
+  StartPage,
+  ShopPage,
+  GroupsPage,
+  UsersPage,
+} from 'pages';
+import { Layout } from 'antd';
+import { Header, Menu, Content } from 'components';
 
-function App() {
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { initUser } from 'redux/auth/actions';
+
+const debugAuth = true;
+
+const App = ({ isAuth, initUser }) => {
+
+  useEffect(() => {
+    initUser();
+  }, [isAuth])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      { isAuth ? null : <Redirect to='/' /> }
+
+      {
+        debugAuth ?
+          <Layout>
+            <Menu />
+            <Layout>
+              <Header />
+              <Content>
+                <Switch>
+                  <Route path='/shop' exact component={ShopPage} />
+                  <Route path='/groups' exact component={GroupsPage} />
+                  <Route path='/users' exact component={UsersPage} />
+                </Switch>
+              </Content>
+            </Layout>
+          </Layout> :
+          <StartPage />
+      }
     </div>
   );
 }
 
-export default App;
+export default connect(
+  ({ auth }) => ({ isAuth: auth.isAuth }), dispatch => bindActionCreators({ initUser }, dispatch)
+  )(App)
