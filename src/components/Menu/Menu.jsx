@@ -3,6 +3,8 @@ import { Layout } from 'antd'
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { Icon, Avatar } from 'UI';
+import { connect } from 'react-redux';
+import { mapStateToProps, mapActionsToProps } from './Menu.index';
 
 
 const { Sider } = Layout;
@@ -29,18 +31,11 @@ const Item = styled(NavLink)`
   }
 `
 
-const item = {
-  name: 'Иван',
-  type: 'user',
-  id: '1',
-}
-
-
-const Component = ({}) => {
+const Component = ({ user }) => {
 
   return <Wrapper width={80}>
-    <Item to={`/${item.type}/${item.id}`}>
-      <Avatar size={50} name={item.name} type={item.type} id={item.id} />
+    <Item to={`/user/${user?.id}`}>
+      <Avatar size={50} name={user?.name || 'А'} imgUrl={user?.imgUrl} type={'user'} id={user?.id} />
     </Item>
 
     <Item to={`/dash`} activeClassName='active'>
@@ -65,4 +60,4 @@ const Component = ({}) => {
   </Wrapper>
 }
 
-export const Menu = Component
+export const Menu = connect(mapStateToProps, mapActionsToProps)(Component)
