@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import dash from 'assets/mock/dash.png';
 import goals from 'assets/mock/goals.png';
 import group from 'assets/mock/group.png';
+import features from 'assets/mock/features.png';
 
 const StyledContent = styled.img`
   visibility: ${props => props.visibility};
@@ -12,7 +13,8 @@ const StyledContent = styled.img`
 const dataTypes = {
   dash,
   goals,
-  group
+  group,
+  features
 }
 
 export const Content = ({data}) => {

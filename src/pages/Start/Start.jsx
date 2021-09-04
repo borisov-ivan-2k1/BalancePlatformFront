@@ -1,13 +1,12 @@
 import styled from 'styled-components';
-import { mapActionsToProps } from './Start.index';
-// import { Button } from 'antd';
+import { mapActionsToProps, mapStateToProps } from './Start.index';
 import logo from 'assets/svg/logo.svg';
 import background from 'assets/images/background.png';
 import preview from 'assets/images/preview.png';
 import { connect } from 'react-redux';
 import { LoginModal } from 'components';
 
-import { Button } from 'UI';
+import { Button, Content } from 'UI';
 
 const Wrapper = styled.div`
 
@@ -38,12 +37,20 @@ const Preview = styled.div`
     font-size: 60px;
     max-width: 950px;
     text-align: center;
+    background: #fff;
   }
+`
+
+const Features = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
 `
 
 export const Component = ({
   changeLoginData,
-  loginData
+  loginData,
+  data
 }) => {
 
   console.log(loginData, 'loginData')
@@ -66,8 +73,13 @@ export const Component = ({
       <img src={preview} alt='preview' />
     </Preview>
 
+    <Features>
+      <Content data={data} />
+    </Features>
+    
+
     <LoginModal />
   </Wrapper>
 }
 
-export const StartPage = connect(null, mapActionsToProps)(Component)
+export const StartPage = connect(mapStateToProps, mapActionsToProps)(Component)
