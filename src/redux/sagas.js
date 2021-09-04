@@ -4,6 +4,7 @@ import auth from './auth/saga';
 import shop from './shop/saga';
 import groups from './groups/saga';
 import users from './users/saga';
+import badges from './badges/saga';
 
 function* rootSaga() {
   yield all([
@@ -11,6 +12,7 @@ function* rootSaga() {
     shop(),
     groups(),
     users(),
+    badges(),
   ])
 }
 

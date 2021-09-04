@@ -6,3 +6,6 @@ export { Product } from './Product/Product';
 export { GroupItem } from './GroupItem/GroupItem';
 export { GroupModal } from './GroupModal/GroupModal';
 export { UserItem } from './UserItem/UserItem';
+export { UserRatingItem } from './UserRatingItem/UserRatingItem';
+export { UserProfile } from './UserProfile/UserProfile';
+export { Badges } from './Badges/Badges';
